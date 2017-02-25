@@ -17,8 +17,8 @@ basic_scaling:
   idle_timeout: 10m
 
 handlers:
-- url: /assets
-  static_dir: assets
+- url: /dist
+  static_dir: dist
   expiration: "365d"
 
 # - url: /(.*\.(gif|png|jpg))$
