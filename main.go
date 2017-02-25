@@ -7,9 +7,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func main() {
+func init() {
 	// Set Gin to production mode
-	// gin.SetMode(gin.ReleaseMode)
+	gin.SetMode(gin.ReleaseMode)
 	// Get the gin router
 	r := gin.Default()
 	// add gzip to load files faster
@@ -24,7 +24,7 @@ func main() {
 	r.NoRoute(NotFound)
 
 	// To run locally uncomment the line below and change init func to main
-	r.Run(":3000")
+	// r.Run(":3000")
 
 	// To work with App Engine
 	http.Handle("/", r)
