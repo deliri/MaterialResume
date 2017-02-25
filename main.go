@@ -15,9 +15,9 @@ func main() {
 	// add gzip to load files faster
 	r.Use(gzip.Gzip(gzip.DefaultCompression))
 	// parse and execute templates
-	r.LoadHTMLGlob("dev/*.gohtml")
+	r.LoadHTMLGlob("production/*.gohtml")
 	// grab static components
-	r.Static("/assets", "./assets")
+	r.Static("/dist", "./dist")
 	// control home route
 	r.GET("/", Index)
 	// Handle all other routes
